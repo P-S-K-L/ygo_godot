@@ -1,11 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://bpavasya6qtq3"]
 
-[ext_resource type="Script" path="res://card_editor/nodes/GeneralNode.gd" id="1_oxuil"]
+[ext_resource type="Script" path="res://card_editor/nodes/general_node.gd" id="1_y5ah4"]
 
 [node name="GeneraNode" type="GraphNode"]
 offset_left = 947.0
 offset_top = 211.0
 offset_right = 1195.0
 offset_bottom = 574.0
-title = "Card"
-script = ExtResource("1_oxuil")
+script = ExtResource("1_y5ah4")

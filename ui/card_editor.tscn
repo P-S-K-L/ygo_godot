@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://coxxwr7rklx67"]
+
+[ext_resource type="Script" path="res://ui/card_editor.gd" id="1_u1mh0"]
+[ext_resource type="Script" path="res://ui/graph_edit.gd" id="2_t4wnp"]
+
+[node name="CardEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u1mh0")
+
+[node name="GraphEdit" type="GraphEdit" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_t4wnp")
+
+[node name="AddMenu" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 338.0
+offset_top = 389.0
+offset_right = 605.0
+offset_bottom = 753.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AddMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="AddMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "添加节点"
+
+[connection signal="on_graph_click_empty" from="GraphEdit" to="." method="_on_graph_edit_on_graph_click_empty"]
