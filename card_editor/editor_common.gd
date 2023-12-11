@@ -3,16 +3,16 @@ class_name EditorCommon
 enum SlotType {
     NULL = 0,
     STRING = 1,
-    STRING_EDIT = 2,
     INT = 3,
-    EFFECT = 4,
+    ENUM = 4,
+    EFFECT = 5,
 }
 
 static var SLOT_COLORS = [
     Color.PURPLE,
     Color.WHITE,
-    Color.WHITE,
     Color.SKY_BLUE,
+    Color.PINK,
     Color.CHARTREUSE,
 ]
 

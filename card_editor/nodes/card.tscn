@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://x3hmvlbw64wi"]
+
+[ext_resource type="PackedScene" uid="uid://bpavasya6qtq3" path="res://card_editor/nodes/general_node.tscn" id="1_ima0y"]
+[ext_resource type="PackedScene" uid="uid://c3b3vs51rb2an" path="res://card_editor/node_slots/string_input.tscn" id="2_gfhgq"]
+[ext_resource type="Script" path="res://card_editor/nodes/card.gd" id="2_lnqtc"]
+[ext_resource type="PackedScene" uid="uid://bpjrlnc7ey8sn" path="res://card_editor/node_slots/dropdown.tscn" id="3_b8kaq"]
+[ext_resource type="Script" path="res://card_editor/slot_config.gd" id="4_8r6o5"]
+
+[sub_resource type="Resource" id="Resource_15m51"]
+script = ExtResource("4_8r6o5")
+slot_type = 1
+slot_name = "卡名"
+enable_left = false
+enable_right = false
+
+[sub_resource type="Resource" id="Resource_8mobk"]
+script = ExtResource("4_8r6o5")
+slot_type = 4
+slot_name = "卡片类型"
+enable_left = false
+enable_right = false
+
+[node name="CardNode" instance=ExtResource("1_ima0y")]
+title = "卡"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+script = ExtResource("2_lnqtc")
+
+[node name="CardName" parent="." index="1" instance=ExtResource("2_gfhgq")]
+layout_mode = 2
+config = SubResource("Resource_15m51")
+
+[node name="CardType" parent="." index="2" instance=ExtResource("3_b8kaq")]
+layout_mode = 2
+config = SubResource("Resource_8mobk")

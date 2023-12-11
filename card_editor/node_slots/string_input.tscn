@@ -1,6 +1,18 @@
-[gd_scene format=3 uid="uid://c3b3vs51rb2an"]
+[gd_scene load_steps=4 format=3 uid="uid://c3b3vs51rb2an"]
 
-[node name="NameLayout" type="HBoxContainer"]
+[ext_resource type="Script" path="res://card_editor/node_slots/string_input.gd" id="1_y4oth"]
+[ext_resource type="Script" path="res://card_editor/slot_config.gd" id="2_v1lo5"]
+
+[sub_resource type="Resource" id="Resource_egybv"]
+script = ExtResource("2_v1lo5")
+slot_type = 1
+slot_name = "字符串"
+enable_left = false
+enable_right = false
+
+[node name="StringInput" type="HBoxContainer"]
+script = ExtResource("1_y4oth")
+config = SubResource("Resource_egybv")
 
 [node name="NameLabel" type="Label" parent="."]
 layout_mode = 2

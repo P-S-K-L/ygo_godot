@@ -3,13 +3,12 @@ extends Control
 var ADD_MENU_CONFIG = [
     {
         name = "卡",
-        config = "res://card_editor/nodes/card.tres",
+        scene = preload("res://card_editor/nodes/card.tscn"),
     }
 ]
 
 var add_menu_mouse_position: Vector2
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
     setup_add_menu()
     pass # Replace with function body.
@@ -19,11 +18,8 @@ func setup_add_menu():
     for c in ADD_MENU_CONFIG:
         var button = Button.new()
         button.text = c.name
-        button.pressed.connect(on_add_button_pressed.bind(c.config))
+        button.pressed.connect(on_add_button_pressed.bind(c))
         root.add_child(button)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-       
 
 func _unhandled_input(event):
     if event.is_action("graph_add_node"):
@@ -38,11 +34,9 @@ func show_add_node_menu(event):
 func hide_add_node_menu(event):
     $AddMenu.visible = false
 
-func on_add_button_pressed(config_path: String):
-    var scene = preload("res://card_editor/nodes/general_node.tscn")
+func on_add_button_pressed(config):
+    var scene = config.scene
     var node = scene.instantiate()
-    var config = load(config_path)
-    node.setup(config)
     $GraphEdit.add_child(node)
     node.set_position_offset($GraphEdit.scroll_offset + add_menu_mouse_position)
     hide_add_node_menu(null)
