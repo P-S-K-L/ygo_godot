@@ -21,6 +21,10 @@ enable_left = false
 enable_right = false
 
 [node name="CardNode" instance=ExtResource("1_ima0y")]
+offset_left = 910.0
+offset_top = 221.0
+offset_right = 1158.0
+offset_bottom = 584.0
 title = "卡"
 slot/0/left_enabled = false
 slot/0/left_type = 0
