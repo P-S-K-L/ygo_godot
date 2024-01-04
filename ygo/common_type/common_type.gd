@@ -11,3 +11,9 @@ const CARD_TYPE_NAMES: Array[String] = [
     "魔法卡",
     "陷阱卡"
 ]
+
+
+# TODO 全部放一个枚举里可以吗
+enum CardSubType {
+    NORMAL_MONSTER = 0,
+}
