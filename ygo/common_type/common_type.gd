@@ -12,7 +12,7 @@ const CARD_TYPE_NAMES: Array[String] = [
     "陷阱卡"
 ]
 
-enum CARD_SUB_TYPE {
+enum CardSubType {
     # monster
     NORMAL_MONSTER,
     EFFECT_MONSTER,

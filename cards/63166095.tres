@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="D_Card" load_steps=8 format=3 uid="uid://d4a6nl4xgj2e0"]
+
+[ext_resource type="Script" path="res://ygo/card_definition/basic.gd" id="1_6df8e"]
+[ext_resource type="Script" path="res://ygo/card_definition/card.gd" id="1_dlowd"]
+[ext_resource type="Script" path="res://ygo/card_definition/bool_expr/list_empty.gd" id="2_6vi6l"]
+[ext_resource type="Script" path="res://ygo/card_definition/effect.gd" id="2_08f8a"]
+
+[sub_resource type="Resource" id="Resource_j3vrt"]
+script = ExtResource("1_6df8e")
+id = 63166095
+name = "闪刀起动-交闪"
+base_type = 1
+sub_type = 7
+description = ""
+
+[sub_resource type="Resource" id="Resource_bpv2d"]
+script = ExtResource("2_6vi6l")
+
+[sub_resource type="Resource" id="Resource_54wq7"]
+script = ExtResource("2_08f8a")
+condition = SubResource("Resource_bpv2d")
+before_chain_steps = Array[Resource("res://ygo/card_definition/step.gd")]([])
+steps = Array[Resource("res://ygo/card_definition/step.gd")]([])
+
+[resource]
+script = ExtResource("1_dlowd")
+basic = SubResource("Resource_j3vrt")
+effects = Array[ExtResource("2_08f8a")]([SubResource("Resource_54wq7")])
