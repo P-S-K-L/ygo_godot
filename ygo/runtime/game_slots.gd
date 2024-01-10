@@ -29,7 +29,7 @@ var monster_slots_1: Array[R_Slot]
 var extra_slot_left: R_Slot
 var extra_slot_right: R_Slot
 
-func get_monster_slots(player:int) -> Array[R_Slot]:
+func get_main_monster_slots(player:int) -> Array[R_Slot]:
     assert(player == 0 or player == 1)
     match player:
         0: return monster_slots_0

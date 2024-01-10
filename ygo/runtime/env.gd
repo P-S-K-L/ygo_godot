@@ -17,5 +17,7 @@ var game: R_Game
 
 var game_slots: R_GameSlots
 
-func get_self_player() -> int:
-    game.turn_player
+func get_my_position() -> int:
+    var card: R_Card = self_card
+    var current_owner: R_Player = card.current_owner
+    return current_owner.position

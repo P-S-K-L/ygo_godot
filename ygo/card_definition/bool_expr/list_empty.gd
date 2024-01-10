@@ -6,5 +6,5 @@ class_name D_ListEmpty
 @export var list_expr: D_ListExpr
 
 func eval(env: R_Env) -> bool:
-    var ls = list_expr.eval()
+    var ls = list_expr.eval(env)
     return len(ls) == 0
